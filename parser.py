@@ -4,7 +4,7 @@ from biothings.utils.dataload import dict_convert, dict_sweep
 from biothings import config
 logging = config.logger
 def load_HGNC(data_folder):
-    infile = os.path.abspath("/opt/biothings/GRCh37/hgnc/latest/Hgnc.tsv )
+    infile = os.path.abspath("/opt/biothings/GRCh37/hgnc/latest/Hgnc.tsv")
     assert os.path.exists(infile)
     dat = pandas.read_csv(infile,sep="\t",squeeze=True,quoting=csv.QUOTE_NONE).to_dict(orient='records')
     results = {}
