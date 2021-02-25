@@ -7,7 +7,7 @@ def load_HGNC(data_folder):
     infile = os.path.abspath("/opt/biothings/GRCh37/hgnc/latest/Hgnc.tsv")
     assert os.path.exists(infile)
     dat = pandas.read_csv(infile,sep="\t",squeeze=True,quoting=csv.QUOTE_NONE)
-    dat = dat.drop(columns=["mirbase", "homeodb", "orphanet", "horde_id", "kznf_gene_catalog", "mamit-trnadb", "rna_central_ids", "imgt", "gtrnadb"]).to_dict(orient='records')
+    dat = dat.drop(columns=["snornabase", "mirbase", "homeodb", "orphanet", "horde_id", "kznf_gene_catalog", "mamit-trnadb", "rna_central_ids", "imgt", "gtrnadb"]).to_dict(orient='records')
     results = {}
     for rec in dat:
         _id = rec["hgnc_id"]
